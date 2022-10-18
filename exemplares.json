@@ -1,0 +1,16 @@
+[ {
+  "codigo" : 1,
+  "dataAquisicao" : [ 2022, 10, 18 ]
+}, {
+  "codigo" : 2,
+  "dataAquisicao" : [ 2022, 10, 18 ]
+}, {
+  "codigo" : 8,
+  "dataAquisicao" : [ 2022, 10, 18 ]
+}, {
+  "codigo" : 18,
+  "dataAquisicao" : [ 2022, 10, 18 ]
+}, {
+  "codigo" : 19,
+  "dataAquisicao" : [ 2022, 10, 18 ]
+} ]

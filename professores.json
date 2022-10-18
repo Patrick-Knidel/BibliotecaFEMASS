@@ -1,0 +1,8 @@
+[ {
+  "codigo" : null,
+  "nome" : "Patrick",
+  "endereco" : "Rua P",
+  "telefone" : "22 9999999999",
+  "prazoMaximoDevolucao" : 30,
+  "disciplina" : "prog 3"
+} ]
