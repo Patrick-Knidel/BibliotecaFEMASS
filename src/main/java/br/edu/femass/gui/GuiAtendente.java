@@ -1,9 +1,11 @@
 package br.edu.femass.gui;
 
 import br.edu.femass.dao.DaoAluno;
+import br.edu.femass.dao.DaoEmprestimo;
 import br.edu.femass.dao.DaoExemplar;
 import br.edu.femass.dao.DaoProfessor;
 import br.edu.femass.model.Aluno;
+import br.edu.femass.model.Emprestimo;
 import br.edu.femass.model.Exemplar;
 import br.edu.femass.model.Professor;
 
@@ -51,6 +53,7 @@ public class GuiAtendente {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new GuiEmprestimo().abrirTelaModal();
+                preencherComboEmprestimo();
             }
         });
     }
@@ -83,6 +86,20 @@ public class GuiAtendente {
         }
     }
 
+    public void preencherComboEmprestimo(){
+        cboEmprestimo.removeAllItems();
+        try {
+            List<Emprestimo> emprestimos = new DaoEmprestimo().getAll();
+
+            for(Emprestimo emprestimo: emprestimos){
+                cboEmprestimo.addItem(emprestimo);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }
+
     public void preencherComboExemplar(){
         cboExemplar.removeAllItems();
         try {
@@ -102,6 +119,7 @@ public class GuiAtendente {
         GuiAtendente gui = new GuiAtendente();
         gui.preencherComboProfessor();
         gui.preencherComboAluno();
+        gui.preencherComboEmprestimo();
         gui.preencherComboExemplar();
         frame.setContentPane(gui.jPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

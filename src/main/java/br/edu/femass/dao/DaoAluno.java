@@ -1,6 +1,7 @@
 package br.edu.femass.dao;
 
 import br.edu.femass.model.Aluno;
+import br.edu.femass.model.Livro;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -34,6 +35,7 @@ public class DaoAluno extends Persistencia<Aluno> implements Dao<Aluno>{
             String json = new String(in.readAllBytes());
 
             List<Aluno> alunos = getObjectMapper().readValue(json, new TypeReference<List<Aluno>>(){});
+            Aluno.atualizarProximoNumero(alunos);
             return alunos;
         } catch (FileNotFoundException f){
             return new ArrayList();

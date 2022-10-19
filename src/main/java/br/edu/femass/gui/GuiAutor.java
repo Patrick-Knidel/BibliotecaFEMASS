@@ -17,6 +17,7 @@ public class GuiAutor {
     private JTextField txtSobrenome;
     private JTextField txtNacionalidade;
     private JButton btnSalvar;
+    private JTextField txtCodigo;
 
     public GuiAutor() {
         btnSalvar.addActionListener(new ActionListener() {
@@ -26,6 +27,7 @@ public class GuiAutor {
                     Autor autor = new Autor(txtNome.getText(), txtSobrenome.getText(), txtNacionalidade.getText());
                     new DaoAutor().save(autor);
                     preencherListaAutores();
+                    JOptionPane.showMessageDialog(null, "Autor cadastrado!");
                 } catch(Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
@@ -52,18 +54,6 @@ public class GuiAutor {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
-
-    public void abrirTela(){
-        JFrame frame = new JFrame();
-        GuiAutor gui = new GuiAutor();
-        gui.preencherListaAutores();
-        frame.setContentPane(gui.jPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Cadastro de Autor");
-        frame.pack();
-        frame.setVisible(true);
-    }
-
     public void abrirTelaModal(){
         JDialog frame = new JDialog(new Frame(), true);
         GuiAutor gui = new GuiAutor();

@@ -19,6 +19,7 @@ public class GuiAluno {
     private JTextField txtMatricula;
     private JTextField txtDevolucao;
     private JButton btnSalvar;
+    private JTextField txtCodigo;
 
     public GuiAluno() {
         lstAlunos.addListSelectionListener(new ListSelectionListener() {
@@ -56,18 +57,6 @@ public class GuiAluno {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
-
-    public void abrirTela(){
-        JFrame frame = new JFrame();
-        GuiAluno gui = new GuiAluno();
-        gui.preencherListaAlunos();
-        frame.setContentPane(gui.jPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Cadastro de Aluno");
-        frame.pack();
-        frame.setVisible(true);
-    }
-
     public void abrirTelaModal(){
         JDialog frame = new JDialog(new Frame(), true);
         GuiAluno gui = new GuiAluno();

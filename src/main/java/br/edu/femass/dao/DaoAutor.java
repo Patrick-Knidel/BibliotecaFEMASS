@@ -34,6 +34,7 @@ public class DaoAutor extends Persistencia<Autor> implements Dao<Autor>{
             String json = new String(in.readAllBytes());
 
             List<Autor> autores = getObjectMapper().readValue(json, new TypeReference<List<Autor>>(){});
+            Autor.atualizarProximoNumero(autores);
             return autores;
         } catch (FileNotFoundException f){
             return new ArrayList();

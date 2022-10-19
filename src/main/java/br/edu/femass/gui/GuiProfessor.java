@@ -19,6 +19,7 @@ public class GuiProfessor {
     private JTextField txtDisciplina;
     private JButton btnSalvar;
     private JTextField txtDevolucao;
+    private JTextField txtCodigo;
 
     public GuiProfessor() {
         lstProfessores.addListSelectionListener(new ListSelectionListener() {
@@ -33,6 +34,7 @@ public class GuiProfessor {
                     txtDisciplina.setText(professor.getDisciplina());
                     txtDevolucao.setText(professor.getPrazoMaximoDevolucao().toString());
                 }
+                JOptionPane.showMessageDialog(null, "Professor cadastrado!");
             }
         });
         btnSalvar.addActionListener(new ActionListener() {

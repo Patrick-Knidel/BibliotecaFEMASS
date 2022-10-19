@@ -1,16 +1,29 @@
 [ {
   "codigo" : 1,
-  "dataAquisicao" : [ 2022, 10, 18 ]
+  "dataAquisicao" : [ 2022, 10, 19 ],
+  "livro" : {
+    "codigo" : 1,
+    "titulo" : "Harry Potter",
+    "autor" : {
+      "nome" : "Patrick",
+      "nacionalidade" : "Alemão",
+      "codigo" : 1,
+      "sobreNome" : "Knidel"
+    },
+    "ano" : "2002"
+  }
 }, {
   "codigo" : 2,
-  "dataAquisicao" : [ 2022, 10, 18 ]
-}, {
-  "codigo" : 8,
-  "dataAquisicao" : [ 2022, 10, 18 ]
-}, {
-  "codigo" : 18,
-  "dataAquisicao" : [ 2022, 10, 18 ]
-}, {
-  "codigo" : 19,
-  "dataAquisicao" : [ 2022, 10, 18 ]
+  "dataAquisicao" : [ 2022, 10, 19 ],
+  "livro" : {
+    "codigo" : 2,
+    "titulo" : "Percy Jackson",
+    "autor" : {
+      "nome" : "João",
+      "nacionalidade" : "Brasileiro",
+      "codigo" : 2,
+      "sobreNome" : "Moura"
+    },
+    "ano" : "2016"
+  }
 } ]

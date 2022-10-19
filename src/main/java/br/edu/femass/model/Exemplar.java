@@ -7,11 +7,17 @@ public class Exemplar {
     private Long codigo;
     private LocalDate dataAquisicao;
     private static Long proximoCodigo = 1L;
+    private Livro livro;
 
     public Exemplar(){
+
+    }
+
+    public Exemplar(Livro livro){
         this.codigo = proximoCodigo;
         proximoCodigo++;
         this.dataAquisicao = LocalDate.now();
+        this.livro = livro;
     }
 
     public Long getCodigo() {
@@ -30,10 +36,11 @@ public class Exemplar {
         this.dataAquisicao = dataAquisicao;
     }
 
-    public String toString(){
-        return ("Código: " + getCodigo() + "\n" +
-                "Data de aquisição: " + getDataAquisicao());
+    public Livro getLivro(){
+        return livro;
     }
+    public String toString(){
+        return (getCodigo() + " : " + getDataAquisicao() + " : " + getLivro());    }
 
     public static void atualizarProximoNumero(List<Exemplar> exemplares){
         for(Exemplar exemplar: exemplares){

@@ -1,11 +1,10 @@
 package br.edu.femass.gui;
 
 import br.edu.femass.dao.DaoAluno;
+import br.edu.femass.dao.DaoEmprestimo;
 import br.edu.femass.dao.DaoExemplar;
 import br.edu.femass.dao.DaoProfessor;
-import br.edu.femass.model.Aluno;
-import br.edu.femass.model.Exemplar;
-import br.edu.femass.model.Professor;
+import br.edu.femass.model.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,14 +17,23 @@ public class GuiEmprestimo {
     private JComboBox cboLeitor;
     private JComboBox cboExemplar;
     private JButton btnSalvar;
+    private JTextField txtPrevisaoDevolucao;
+    private JTextField txtDataDevolucao;
 
     public GuiEmprestimo() {
         btnSalvar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                preencherComboExemplar();
-                preencherComboLeitor();
-                JOptionPane.showMessageDialog(null, "Emprestado com sucesso!");
+                try{
+                    Emprestimo emprestimo = new Emprestimo((Leitor) cboLeitor.getSelectedItem(), (Exemplar) cboExemplar.getSelectedItem());
+                    new DaoEmprestimo().save(emprestimo);
+                    preencherComboExemplar();
+                    preencherComboLeitor();
+                    JOptionPane.showMessageDialog(null, "Emprestado com sucesso!");
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+
             }
         });
     }
@@ -71,7 +79,7 @@ public class GuiEmprestimo {
         gui.preencherComboExemplar();
         frame.setContentPane(gui.jPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setTitle("Emprestimo");
+        frame.setTitle("Emprestimo de exemplares");
         frame.pack();
         frame.setVisible(true);
     }

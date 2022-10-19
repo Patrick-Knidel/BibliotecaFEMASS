@@ -31,6 +31,7 @@ public class GuiLivro {
                     Livro livro = new Livro(txtTitulo.getText(), (Autor) cboAutor.getSelectedItem(), txtAno.getText());
                     new DaoLivro().save(livro);
                     preencherListaLivro();
+                    JOptionPane.showMessageDialog(null,"Livro cadastrado!");
                 } catch (Exception ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }

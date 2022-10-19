@@ -35,6 +35,12 @@ public class GuiBibliotecario {
                 preencherComboExemplar();
             }
         });
+        btnLeitorAtrasado.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,"Estamos trabalhando para implementar esta funcionalidade!...");
+            }
+        });
     }
 
     public void preencherComboLivro(){

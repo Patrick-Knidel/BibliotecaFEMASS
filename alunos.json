@@ -1,8 +1,8 @@
 [ {
-  "codigo" : null,
-  "nome" : "Patrick",
-  "endereco" : "Rua p",
+  "nome" : "Patrick ",
+  "endereco" : "rua P",
   "telefone" : "22 999999999",
   "prazoMaximoDevolucao" : 15,
-  "matricula" : "2001230027"
+  "matricula" : "2001230027",
+  "codigo" : 1
 } ]

@@ -55,7 +55,7 @@ public class Livro {
     }
 
     public String toString(){
-        return (getCodigo() + " - " + getTitulo() + " - " + getAutor() + " - " + getAno());
+        return (getCodigo() + " : " + getTitulo() + " - " + getAutor() + " - " + getAno());
     }
 
     public static void atualizarProximoNumero(List<Livro> livros){

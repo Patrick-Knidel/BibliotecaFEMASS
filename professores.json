@@ -1,8 +1,8 @@
 [ {
-  "codigo" : null,
-  "nome" : "Patrick",
-  "endereco" : "Rua P",
-  "telefone" : "22 9999999999",
+  "nome" : "Alan Galante",
+  "endereco" : "Rua Alan",
+  "telefone" : "22 999999999",
   "prazoMaximoDevolucao" : 30,
-  "disciplina" : "prog 3"
+  "disciplina" : "Prog 3",
+  "codigo" : 1
 } ]

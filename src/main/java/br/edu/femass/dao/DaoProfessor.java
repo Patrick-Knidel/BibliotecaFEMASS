@@ -35,6 +35,7 @@ public class DaoProfessor extends Persistencia<Professor> implements Dao<Profess
             String json = new String(in.readAllBytes());
 
             List<Professor> professores = getObjectMapper().readValue(json, new TypeReference<List<Professor>>(){});
+            Professor.atualizarProximoNumero(professores);
             return professores;
         } catch (FileNotFoundException f){
             return new ArrayList();

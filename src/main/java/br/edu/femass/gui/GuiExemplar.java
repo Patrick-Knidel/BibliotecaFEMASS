@@ -22,7 +22,7 @@ public class GuiExemplar {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Exemplar exemplar = new Exemplar();
+                    Exemplar exemplar = new Exemplar( (Livro) cboLivro.getSelectedItem());
                     new DaoExemplar().save(exemplar);
                     preencherComboLivro();
                     JOptionPane.showMessageDialog(null, "Exemplar cadastrado!");

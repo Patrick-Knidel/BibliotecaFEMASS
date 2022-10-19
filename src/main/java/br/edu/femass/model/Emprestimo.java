@@ -6,15 +6,19 @@ public class Emprestimo {
     private LocalDate dataEmprestimo;
     private LocalDate dataPrevisaoDevolucao;
     private LocalDate dataDevolucao;
+    private Leitor leitor;
+    private Exemplar exemplar;
 
     public Emprestimo(){
 
     }
 
-    public Emprestimo(LocalDate dataPrevisaoDevolucao, LocalDate dataDevolucao) {
+    public Emprestimo(Leitor leitor, Exemplar exemplar) {
         this.dataEmprestimo = LocalDate.now();
         this.dataPrevisaoDevolucao = dataPrevisaoDevolucao;
         this.dataDevolucao = dataDevolucao;
+        this.leitor = leitor;
+        this.exemplar = exemplar;
     }
 
     public LocalDate getDataEmprestimo() {
@@ -39,5 +43,14 @@ public class Emprestimo {
 
     public void setDataDevolucao(LocalDate dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
+    }
+
+    public Exemplar getExemplar(){
+        return exemplar;
+    }
+
+    @Override
+    public String toString() {
+        return (getDataEmprestimo().toString() + " : " + exemplar.toString());
     }
 }

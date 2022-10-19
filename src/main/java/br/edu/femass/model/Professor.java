@@ -4,15 +4,25 @@ import java.util.List;
 
 public class Professor extends Leitor{
     private String disciplina;
+    private Long codigo;
+    private static Long proximoCodigo = 1L;
     public Professor(){
 
     }
 
     public Professor(String nome, String endereco, String telefone, String disciplina) {
         super(nome, endereco, telefone);
+        this.codigo = proximoCodigo;
+        proximoCodigo++;
         this.disciplina = disciplina;
         setPrazoMaximoDevolucao(30);
+
     }
+
+    public Long getCodigo() {
+        return codigo;
+    }
+
     public String getDisciplina() {
         return disciplina;
     }
@@ -31,6 +41,14 @@ public class Professor extends Leitor{
     }
 
     public String toString(){
-        return (getNome() + " - " + getTelefone() + " - " + getDisciplina() + " - " + getPrazoMaximoDevolucao());
+        return (getCodigo() + " - " + getNome() + " - " + getTelefone() + " - " + getDisciplina() + " - " + getPrazoMaximoDevolucao());
+    }
+
+    public static void atualizarProximoNumero(List<Professor> professores){
+        for(Professor professor: professores){
+            if(professor.getCodigo() > proximoCodigo){
+                proximoCodigo = professor.getCodigo()+1;
+            }
+        }
     }
 }
